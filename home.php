@@ -25,12 +25,12 @@
     <img src="images/hamburger-menu-icon.png" style="cursor:pointer" width="70" height="70" class="me-3" alt="Bootstrap">
   </div>
 
-fuck this shit
+
 
 
 
   <!-- Map -->
-  <img src="images/ou-map-100-done.png" id="map">
+  <img src="images/ou-map-100%-done.png" id="map">
 
 
 
