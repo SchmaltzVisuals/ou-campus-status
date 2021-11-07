@@ -25,7 +25,7 @@
     <img src="images/hamburger-menu-icon.png" style="cursor:pointer" width="70" height="70" class="me-3" alt="Bootstrap">
   </div>
 
-
+fuck this shit
 
 
 
