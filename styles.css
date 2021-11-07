@@ -5,3 +5,7 @@
 .custom-toggler .navbar-toggler {
   border-color: rgb(181, 154, 87);
 }
+
+#active {
+  color: rgb(181, 154, 87);
+}

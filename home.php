@@ -22,8 +22,9 @@
 </head>
 <body style="background-color: grey;">
 
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
-    <a class="navbar-brand" href="#" style="color:#b59a57;">OU Traffic</a>
+    <a class="navbar-brand" style="color:#b59a57; padding-left:10px">OU Traffic</a>
     <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,40 +32,39 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#" style="color:#b59a57;">Parking</a>
+          <a class="nav-link" id="active" onClick="" href="#">Parking</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" style="color:#b59a57;">Dining</a>
+          <a class="nav-link" href="#">Dining</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" style="color:#b59a57;">Recreation</a>
+          <a class="nav-link" href="#">Recreation</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" style="color:#b59a57;">Vending</a>
+          <a class="nav-link" href="#">Vending</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" style="color:#b59a57;">Printers</a>
+          <a class="nav-link" href="#">Printers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" style="color:#b59a57;">Study Areas</a>
+          <a class="nav-link" href="#">Study Areas</a>
         </li>
-
       </ul>
     </div>
   </nav>
-
+  <!-- End Navbar -->
 
 
 
   <!-- Map -->
   <img src="images/ou-map-100-done.png" id="map">
+  <!-- End Map -->
 
 
 
 
 
-
-  <!-- Bootstrap JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
