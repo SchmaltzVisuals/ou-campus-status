@@ -1,0 +1,14 @@
+{
+  "name": "ou-campus-status-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "effects.js",
+  "devDependencies": {
+    "node-sass": "4.9.2"
+},
+"scripts" : {
+    "node-sass": "node-sass --output-style compressed -o dist/css/ scss --recursive"
+},
+  "author": "",
+  "license": "ISC"
+}
