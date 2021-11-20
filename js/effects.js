@@ -1,15 +1,30 @@
+// Get the modal
+
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+
+var btn = document.getElementsByClassName("circle");
 
 
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
-function changeBackground(activity_reports, id){
-  if (activity_reports >= 20) {
-    document.getElementById("P" + id).style.backgroundColor = 'red';
-  }
-  if (activity_reports >= 10) {
-    document.getElementById("P" + id).style.backgroundColor = 'yellow';
-  }
-  else {
-    document.getElementById("P" + id).style.backgroundColor = 'lightgreen';
+// When the user clicks on the button, open the modal
+for (let i = 0; i < 29; i++){
+  btn[i].onclick = function(){
+    modal.style.display = "block";
   }
 }
-changeBackground()
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

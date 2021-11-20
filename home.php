@@ -79,14 +79,25 @@ while ($row = $result->fetch_assoc()){
     $lotIconColor = "lightgreen";
   }
   // Print lot icon
-  echo '<div id="P'.$lotID.'" class="circle" style="background-color:'.$lotIconColor.'">P'.$lotID.'</div>';
+  echo '<button id="P'.$lotID.'" class="circle" style="background-color:'.$lotIconColor.'">P'.$lotID.'</button>';
 }
+
 // Close the database connection
 $connect->close();
  ?>
 <!-- End Parking Lot Icons -->
 
-<!-- <div id="P1" class="circle">P1</div> -->
+
+<!-- Begin Popup -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1>Parking Lot P<?=$lotID?></h1>
+    <p>Some text in the Modal..</p>
+  </div>
+</div>
+<!-- End Popup -->
 
 
   <!-- Map -->
@@ -97,7 +108,11 @@ $connect->close();
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
+
+
 <footer>
-    <script type="text/javascript" src="js/effects.js"></script>
+    <script type="text/javascript" src="js/effects.js"></script> <!-- Do we still need this js? Probably not really sure tho -->
+    <!-- Modal JS -->
+
 </footer>
 </html>
