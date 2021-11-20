@@ -53,98 +53,41 @@
 </nav>
 <!-- End Navbar -->
 
-<!-- Begin Parking Lot Icons -->
-<div id="P1" class="circle">P1</div>
-<div id="P2" class="circle">P2</div>
-<div id="P3" class="circle">P3</div>
-<div id="P5" class="circle">P5</div>
-<div id="P9" class="circle">P9</div>
 
-<div id="P11" class="circle">P11</div>
-<div id="P12" class="circle">P12</div>
-<div id="P13" class="circle">P13</div>
-<div id="P16" class="circle">P16</div>
-<div id="P17" class="circle">P17</div>
-<div id="P18" class="circle">P18</div>
-
-<div id="P24" class="circle">P24</div>
-<div id="P26" class="circle">P26</div>
-<div id="P28" class="circle">P28</div>
-<div id="P29" class="circle">P29</div>
-
-<div id="P31" class="circle">P31</div>
-<div id="P32" class="circle">P32</div>
-<div id="P35" class="circle">P35</div>
-<div id="P36" class="circle">P36</div>
-<div id="P37" class="circle">P37</div>
-<div id="P38" class="circle">P38</div>
-<div id="P39" class="circle">P39</div>
-
-<div id="P41" class="circle">P41</div>
-<div id="P42" class="circle">P42</div>
-
-<div id="P51" class="circle">P51</div>
-<div id="P53" class="circle">P53</div>
-<div id="P55" class="circle">P55</div>
-<div id="P57" class="circle">P57</div>
-
-<div id="P61" class="circle">P61</div>
-<!-- End Parking Lot Icons -->
-
+<!-- Display Parking Lot Icons -->
 <?php
-
-
 // Connect to database
 require "connect.php";
-
-//
-//  where id='whatever the user clicked on'
+// Select all columns from the parkinglots table in the database
 $sql = "select * from parkinglots";
 $result = $connect->query($sql);
 // Loop through all rows in the table
 while ($row = $result->fetch_assoc()){
+  // Save the parking lot number and number of reports as variables
   $numReports = $row['reports'];
   $lotID = $row['id'];
-
-  echo '<script type="text/javascript" src="js/effects.js">changeBackground('.$numReports.', '.$lotID.');</script>';
-
-
-/*
+  // If the parking lot has 20 or more reports, set lotIconColor to red
   if ($numReports >= 20) {
-    //echo '<script type="text/javascript" src="/js/effects.js">';
-    //echo 'document.getElementById("P'.$row['id'].'").style.backgroundColor = 'red';';
-    //echo '</script>';
-    echo 'i am red';
+    $lotIconColor = "red";
   }
+  // If the parking lot has 10 or more (but less than 20) reports, set lotIconColor to yellow
   else if ($numReports >= 10) {
-     echo '<script type="text/javascript" src="/js/effects.js">changeBackground('.$numReports.');</script>';
-    echo ' i am neither red nor green';
+    $lotIconColor = "yellow";
   }
+  // If the parking lot has less than 10 reports, set lotIconColor to lightgreen
   else {
-    //echo '<script type="text/javascript" src="/js/effects.js">';
-    //echo 'document.getElementById("P'.$row['id'].'").style.backgroundColor = 'lightgreen';';
-    //echo '</script>';
-    echo 'i am green';
+    $lotIconColor = "lightgreen";
   }
-*/
-
-
-
-
+  // Print lot icon
+  echo '<div id="P'.$lotID.'" class="circle" style="background-color:'.$lotIconColor.'">P'.$lotID.'</div>';
 }
-
-/*
-if (activity_reports >= 20) {
-  document.getElementById("P1").style.backgroundColor = 'red';
-}
-else if (activity_reports >= 10) {
-  document.getElementById("P1").style.backgroundColor = 'yellow';
-}
-else {
-  document.getElementById("P1").style.backgroundColor = 'lightgreen';
-}
-*/
+// Close the database connection
+$connect->close();
  ?>
+<!-- End Parking Lot Icons -->
+
+<!-- <div id="P1" class="circle">P1</div> -->
+
 
   <!-- Map -->
   <img src="images/ou-map-100-done.png" id="map">
