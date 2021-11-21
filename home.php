@@ -78,11 +78,9 @@ while ($row = $result->fetch_assoc()){
   else {
     $lotIconColor = "lightgreen";
   }
-
   // Print lot icon
   echo '<button id="P'.$lotID.'" class="circle" style="background-color:'.$lotIconColor.'">P'.$lotID.'</button>';
 }
-
 // Close the database connection
 $connect->close();
  ?>
@@ -94,7 +92,7 @@ $connect->close();
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <h1>Parking Lot P<script>getID()</script></h1>
+    <h1 id="lotName"></h1>
     <p>Some text in the Modal..</p>
   </div>
 </div>
@@ -109,20 +107,9 @@ $connect->close();
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
-<script type="text/javascript">
-function getID(){
-  for (let i = 0; i < 29; i++){
-    btn[i].onclick = function(){
-      modal.style.display = "block";
-      return i;
-    }
-  }
-}
-</script>
-
 <footer>
-    <script type="text/javascript" src="js/effects.js"></script> <!-- Do we still need this js? Probably not really sure tho -->
     <!-- Modal JS -->
+    <script type="text/javascript" src="js/effects.js"></script>
 
 </footer>
 </html>
