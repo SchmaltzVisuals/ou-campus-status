@@ -78,8 +78,15 @@ while ($row = $result->fetch_assoc()){
   else {
     $lotIconColor = "lightgreen";
   }
-  // Print lot icon
-  echo '<button id="P'.$lotID.'" class="circle" style="background-color:'.$lotIconColor.'">P'.$lotID.'</button>';
+  // If the parking lot has overnight parking, set overnightParking to yes
+  if ($row['overnightParking'] == 1) {
+    $overnightParking = "overnight-yes";
+  } else {
+    $overnightParking = "overnight-no";
+  }
+
+  // Print lot icon with these classes ("circle overnight-yes/no")
+  echo '<button id="P'.$lotID.'" class="circle '.$overnightParking.'" style="background-color:'.$lotIconColor.'">P'.$lotID.'</button>';
 }
 // Close the database connection
 $connect->close();
@@ -92,8 +99,9 @@ $connect->close();
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
+    <!-- This information is inserted by the JS -->
     <h1 id="lotName"></h1>
-    <p>Some text in the Modal..</p>
+    <p id="lotOvernight"></p>
   </div>
 </div>
 <!-- End Popup -->
