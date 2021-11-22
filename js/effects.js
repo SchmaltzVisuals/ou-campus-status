@@ -4,8 +4,11 @@ var modal = document.getElementById("myModal");
 // Get the button that opens the modal
 var btn = document.getElementsByClassName("circle");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+// Get the X button that closes the modal
+var exit = document.getElementsByClassName("btn-close")[0];
+
+// Get the grey close button that closes the modal
+var close = document.getElementsByClassName("btn-secondary")[0];
 
 // When the user clicks on the button, open the modal
 for (let i = 0; i < 29; i++){
@@ -28,8 +31,13 @@ for (let i = 0; i < 29; i++){
   }
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+// When the user clicks on (x), close the modal
+exit.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks on CLOSE, close the modal
+close.onclick = function() {
   modal.style.display = "none";
 }
 
