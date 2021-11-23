@@ -200,6 +200,14 @@
   font-weight: bold;
 }
 
+.checkboxNavBar{
+  padding-top: 10px;
+}
+
+.checkboxNavBar active{
+  padding-top: 10px;
+}
+
 
 
 
