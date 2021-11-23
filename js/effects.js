@@ -22,8 +22,20 @@ for (let i = 0; i < 29; i++){
     // Begin Busy Level
     var numberOfReports = btn[i].classList[2]; // Number of reports on parking lot
     var textColor = btn[i].classList[3]; // Color of parkinglot icon (used for number of reports in modal)
-    var busyLevel = document.getElementById("busyLevel");
-    var busyReports = document.getElementById("busyReports");
+    var busyLevelElement = document.getElementById("busyLevel"); // Busy Level will be printed here
+    var busyReports = document.getElementById("busyReports"); // Number of reports will be printed here
+    // Check busy level of the lot
+    if (textColor == "red") { // If lot is red, set busy level to BUSY
+      var busyLevel = "BUSY";
+    } else if (textColor == "orange") { // If lot is orange, set busy level to SLIGHTLY BUSY
+      var busyLevel = "SLIGHTLY BUSY";
+    } else if (textColor == "lightgreen") { // If lot is green, set busy level to NOT BUSY
+      var busyLevel = "NOT BUSY";
+    }
+    // Print busy level and change the text color to match the parking lot icon
+    busyLevelElement.innerHTML = busyLevel;
+    busyLevelElement.style.color = textColor;
+    // Print number of reports and change the text color to match the parking lot icon
     busyReports.innerHTML = numberOfReports + " reports in the last hour";
     busyReports.style.color = textColor;
     // End Busy Level

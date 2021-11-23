@@ -13,6 +13,7 @@
 </head>
 <body style="background-color: grey;">
 
+<?php include 'navbar.php' ?>
   <!-- Begin Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
@@ -26,27 +27,27 @@
         <a class="navbar-brand" style="opacity:.75"><b>Filter Options:</b></a>
         <!-- Parking Button -->
         <li class="nav-item">
-          <a class="nav-link active" href="#">Parking</a>
+          <input type="submit" class="nav-link active">Parking</a>
         </li>
         <!-- Dining Button -->
         <li class="nav-item">
-          <a class="nav-link active" href="#">Dining</a>
+          <input type="submit" class="nav-link active">Dining</a>
         </li>
         <!-- Recreation Button -->
         <li class="nav-item">
-          <a class="nav-link" href="#">Recreation</a>
+          <input type="submit" class="nav-link active">Recreation</a>
         </li>
         <!-- Vending Button -->
         <li class="nav-item">
-          <a class="nav-link active" href="#">Vending</a>
+          <input type="submit" class="nav-link active">Vending</a>
         </li>
         <!-- Printers Button -->
         <li class="nav-item">
-          <a class="nav-link" href="#">Printers</a>
+          <input type="submit" class="nav-link active">Printers</a>
         </li>
         <!-- Study Areas Button -->
         <li class="nav-item">
-          <a class="nav-link" href="#">Study Areas</a>
+          <input type="submit" class="nav-link active">Study Areas</a>
         </li>
       </ul>
     </div>
