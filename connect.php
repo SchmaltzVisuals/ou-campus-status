@@ -2,9 +2,9 @@
 // Script to open a connection to the database
 // Connection details
 $hostname = "localhost";
-$username = "xxxx";
-$password = "xxxx";
-$db_name = "xxxx";
+$username = "root";
+$password = "Bones123";
+$db_name = "ou_status";
 // Connect to mySQL
 $connect = new mysqli($hostname, $username, $password, $db_name);
 // Check connection
