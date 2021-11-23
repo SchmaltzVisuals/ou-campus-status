@@ -66,15 +66,15 @@ while ($row = $result->fetch_assoc()){
   // Save the parking lot number and number of reports as variables
   $numReports = $row['reports'];
   $lotID = $row['id'];
-  // If the parking lot has 20 or more reports, set lotIconColor to red
+  // If the parking lot has 20 or more reports
   if ($numReports >= 20) {
     $lotIconColor = "red";
   }
-  // If the parking lot has 10 or more (but less than 20) reports, set lotIconColor to yellow
+  // If the parking lot has 10 or more (but less than 20) reports
   else if ($numReports >= 10) {
-    $lotIconColor = "yellow";
+    $lotIconColor = "orange";
   }
-  // If the parking lot has less than 10 reports, set lotIconColor to lightgreen
+  // If the parking lot has less than 10 reports
   else {
     $lotIconColor = "lightgreen";
   }
@@ -86,7 +86,7 @@ while ($row = $result->fetch_assoc()){
   }
 
   // Print lot icon with these classes ("circle overnight-yes/no")
-  echo '<button id="P'.$lotID.'" class="circle '.$overnightParking.'" style="background-color:'.$lotIconColor.'">P'.$lotID.'</button>';
+  echo '<button id="P'.$lotID.'" class="circle '.$overnightParking.' '.$numReports.' '.$lotIconColor.'" style="background-color:'.$lotIconColor.'">P'.$lotID.'</button>';
 }
 // Close the database connection
 $connect->close();
@@ -102,10 +102,11 @@ $connect->close();
       <button type="button" class="btn-close"></button>
     </div>
     <!-- Modal body -->
-    <div class="modal-body">
+    <div class="modal-body" id="modalBody">
+      <h3 id="busyLevel">Example: BUSY</h3>
+      <h6 id="busyReports">Example: 4 reports in the last hour</h6>
       <p id="lotOvernight" style="display:inline">Example: No Overnight Parking</p>
-      <i class="bi-check-circle-fill" style="display:inline; color:green;"></i>
-      <!--<img style="display:inline" src="img_girl.jpg" alt="Girl in a jacket" width="20" height="20">-->
+      <i id=overnightIcon></i>
     </div>
     <!-- Modal footer -->
     <div class="modal-footer">
