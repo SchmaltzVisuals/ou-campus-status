@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Trafficker CSS -->
-<link href="./sass/main.css" rel="stylesheet">
+ <link href="./sass/main.css" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
@@ -15,7 +15,7 @@
 <body style="background-color: grey;">
 
 <!-- Display Parking Lot Icons -->
-<?php
+<?php /*
 include "navbar.php";
 // Connect to database
 require "connect.php";
@@ -51,7 +51,7 @@ while ($row = $result->fetch_assoc()){
 }
 // Close the database connection
 $connect->close();
- ?>
+ */?>
 <!-- End Parking Lot Icons -->
 
 <!-- Begin Modal Popup -->
