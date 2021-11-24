@@ -17,11 +17,10 @@
       <a class="navbar-brand" style="opacity:.75"><b>Filter Options:</b></a>
       <!-- Parking Button -->
       <li class="checkboxNavBar">
-        <input type="checkbox">
+        <input type="checkbox" class="checkboxNavBar" id="parkingCB">
+        <label class="label" for="parkingCB" > Parking &nbsp;</label>
       </li>
-      <li class="nav-item">
-        <a class="nav-link active">Parking</a>
-      </li>
+
       <!-- Dining Button -->
       <li class="checkboxNavBar">
         <input type="checkbox">
