@@ -19,34 +19,35 @@
       <a class="navbar-brand" style="opacity:.75"><b>Filter Options:</b></a>
       <!-- Parking Button -->
       <li class="checkboxNavBar">
-        <input type="checkbox" class="checkboxNavBar" name="parking" id="parkingCB">
+        <input type="checkbox" class="checkboxNavBar" name="parking" id="parkingCB" value="true">
         <label class="label" for="parkingCB" > Parking &nbsp;</label>
       </li>
       <!-- Dining Button -->
       <li class="checkboxNavBar">
-        <input type="checkbox" class="checkboxNavBar" name="dining" id="diningCB">
+        <input type="checkbox" class="checkboxNavBar" name="dining" id="diningCB" value="true">
         <label class="label" for="diningCB" > Dining &nbsp;</label>
       </li>
       <!-- Recreation Button -->
       <li class="checkboxNavBar">
-        <input type="checkbox" class="checkboxNavBar" name="recreation" id="recreationCB">
+        <input type="checkbox" class="checkboxNavBar" name="recreation" id="recreationCB" value="true">
         <label class="label" for="recreationCB" > Recreation &nbsp;</label>
       </li>
       <!-- Vending Button -->
       <li class="checkboxNavBar">
-        <input type="checkbox" class="checkboxNavBar" name="vending" id="vendingCB">
+        <input type="checkbox" class="checkboxNavBar" name="vending" id="vendingCB" value="true">
         <label class="label" for="vendingCB" > Vending &nbsp;</label>
       </li>
       <!-- Printers Button -->
       <li class="checkboxNavBar">
-        <input type="checkbox" class="checkboxNavBar" name="printers" id="printersCB">
+        <input type="checkbox" class="checkboxNavBar" name="printers" id="printersCB" value="true">
         <label class="label" for="printersCB" >Printers &nbsp;</label>
       </li>
       <!-- Study Areas Button -->
       <li class="checkboxNavBar">
-        <input type="checkbox" class="checkboxNavBar" name="studyAreas" id="studyAreasCB">
+        <input type="checkbox" class="checkboxNavBar" name="studyAreas" id="studyAreasCB" value="true">
         <label class="label" for="studyAreasCB" > Study Areas &nbsp;</label>
       </li>
+      <br>
       <li>
         <input type="submit" name="submit" value="Apply Filter">
       </li>
