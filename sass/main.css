@@ -195,17 +195,17 @@
   border-color: #b59a57;
 }
 
-#navbarNav .active {
-  color: #b59a57;
-  font-weight: bold;
-}
-
 .checkboxNavBar{
   padding-top: 10px;
 }
 
-.checkboxNavBar active{
-  padding-top: 10px;
+.label {
+  color: white;
+  }
+
+.checkboxNavBar:checked + .label {
+  color: #b59a57;
+  font-weight: bold;
 }
 
 
