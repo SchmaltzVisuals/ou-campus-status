@@ -15,8 +15,9 @@
 <body style="background-color: grey;">
 
 <!-- Display Parking Lot Icons -->
-<?php /*
+<?php
 include "navbar.php";
+/*
 // Connect to database
 require "connect.php";
 // Select all columns from the parkinglots table in the database
