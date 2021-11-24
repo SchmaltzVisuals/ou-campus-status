@@ -27,8 +27,8 @@ for (let i = 0; i < 29; i++){
     // Check busy level of the lot
     if (textColor == "red") { // If lot is red, set busy level to BUSY
       var busyLevel = "BUSY";
-    } else if (textColor == "orange") { // If lot is orange, set busy level to SLIGHTLY BUSY
-      var busyLevel = "SLIGHTLY BUSY";
+    } else if (textColor == "orange") { // If lot is orange, set busy level to SOMEWHAT BUSY
+      var busyLevel = "SOMEWHAT BUSY";
     } else if (textColor == "lightgreen") { // If lot is green, set busy level to NOT BUSY
       var busyLevel = "NOT BUSY";
     }
