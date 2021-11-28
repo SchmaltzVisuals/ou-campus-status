@@ -94,6 +94,44 @@ $connect->close();
  ?>
 <!-- End Parking Lot Icons -->
 
+
+<!-- Dining Icons -->
+
+<div class="diningCircle" id="Dining1">
+  <img src="images/dining.png" class="diningIcon" alt="">
+  <p>Atrium Cafe</p>
+</div>
+<div class="diningCircle" id="Dining2">
+  <img src="images/dining.png" class="diningIcon" alt="">
+  <p>Vandenberg</p>
+</div>
+<div class="diningCircle" id="Dining3">
+  <img src="images/dining.png" class="diningIcon" alt="">
+  <p>Au Bon Pain</p>
+</div>
+<div class="diningCircle" id="Dining4">
+  <img src="images/dining.png" class="diningIcon" alt="">
+  <p>Pioneer Food Court</p>
+</div>
+<div class="diningCircle" id="Dining5">
+  <img src="images/dining.png" class="diningIcon" alt="">
+  <p>Suzanne O Frankie Cafe</p>
+</div>
+<div class="diningCircle" id="Dining6">
+  <img src="images/dining.png" class="diningIcon" alt="">
+  <p>Healy Cafe</p>
+</div>
+<div class="diningCircle" id="Dining7">
+  <img src="images/dining.png" class="diningIcon" alt="">
+  <p>OutTakes Cafe</p>
+</div>
+<div class="diningCircle" id="Dining8">
+  <img src="images/dining.png" class="diningIcon" alt="">
+  <p>Patti Finnegans Pub</p>
+</div>
+
+<!-- dining icons end -->
+
 <!-- Begin Modal Popup -->
 <div id="myModal" class="modal">
   <div class="modal-content">
