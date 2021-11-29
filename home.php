@@ -98,12 +98,12 @@
      if ($recreation == true) {
      // Set rec filter to CHECKED
      $recChecked = "checked";
-     // Select all columns from the rec table in the database
+     // Select all columns from the recreation table in the database
         $sql = "select * from recreation";
         $result = $connect->query($sql);
         // Loop through all rows in the table
         while ($row = $result->fetch_assoc()){
-          // Save the parking lot number and number of reports as variables
+          // Save the recreation area and number of reports as variables
           $numReports = $row['reports'];
           $recID = $row['id'];
           $recName = $row['name'];
@@ -123,7 +123,7 @@
           echo '<button class="icon recCircle '.$recName.' '.$numReports.' '.$recIconColor.'" id="recreation'.$recID.'" style="background-color:'.$recIconColor.'"><img src="images/dumbbell.png" class="recIcon"></button>';
         }
         }
-     // End Rec Fitler
+        // End Rec Fitler
 
 
 
@@ -132,7 +132,7 @@
         // Set study filter to CHECKED
         $studyChecked = "checked";
         // Select all columns from the study areas table in the database
-           $sql = "select * from Study Areas";
+           $sql = "select * from study";
            $result = $connect->query($sql);
            // Loop through all rows in the table
            while ($row = $result->fetch_assoc()){
@@ -190,7 +190,7 @@
         </li>
         <!-- Recreation Button -->
         <li class="checkboxNavBar">
-          <input type="checkbox" class="checkboxNavBar" name="recreation" id="recreationCB" value="true" <?=$recreationChecked?>>
+          <input type="checkbox" class="checkboxNavBar" name="recreation" id="recreationCB" value="true" <?=$recChecked?>>
           <label class="label" for="recreationCB" > Recreation &nbsp;</label>
         </li>
         <!-- Vending Button -->

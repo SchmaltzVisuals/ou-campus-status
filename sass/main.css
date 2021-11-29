@@ -50,6 +50,19 @@
   font-weight: bold;
 }
 
+.checkboxNavBar{
+  padding-top: 10px;
+}
+
+.label {
+  color: white;
+  }
+
+.checkboxNavBar:checked + .label {
+  color: #b59a57;
+  font-weight: bold;
+}
+
 .studyCircle {
   position: absolute;
   width: 30px;
