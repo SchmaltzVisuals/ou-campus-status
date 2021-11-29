@@ -14,86 +14,155 @@
 </head>
 <body style="background-color: grey;">
 
-  <!-- Begin Filter -->
-  <?php
-  session_start();
-  require 'connect.php';
-  $parking = $_POST['parking'];
-  $dining = $_POST['dining'];
-  $recreation = $_POST['recreation'];
-  $vending = $_POST['vending'];
-  $printers = $_POST['printers'];
-  $studyAreas = $_POST['studyAreas'];
 
-  // Begin parking lot filter
-  if ($parking == true) {
-  // Set Parking filter to CHECKED
-  $parkingChecked = "checked";
-  // Select all columns from the parkinglots table in the database
-  $sql = "select * from parkinglots";
-  $result = $connect->query($sql);
-  // Loop through all rows in the table
-  while ($row = $result->fetch_assoc()){
-    // Save the parking lot number and number of reports as variables
-    $numReports = $row['reports'];
-    $lotID = $row['id'];
-    // If the parking lot has 20 or more reports
-    if ($numReports >= 20) {
-      $lotIconColor = "red";
-    }
-    // If the parking lot has 10 or more (but less than 20) reports
-    else if ($numReports >= 10) {
-      $lotIconColor = "orange";
-    }
-    // If the parking lot has less than 10 reports
-    else {
-      $lotIconColor = "lightgreen";
-    }
-    // If the parking lot has overnight parking, set overnightParking to yes
-    if ($row['overnightParking'] == 1) {
-      $overnightParking = "overnight-yes";
-    } else {
-      $overnightParking = "overnight-no";
-    }
-    // Print lot icon with these classes ("circle overnight-yes/no")
-    echo '<button id="P'.$lotID.'" class="icon circle '.$overnightParking.' '.$numReports.' '.$lotIconColor.'" style="background-color:'.$lotIconColor.'">P'.$lotID.'</button>';
-  }
-  }
-  // End parking lot filter
 
-  // Begin dining filter
-  if ($dining == true) {
-  // Set Dining filter to CHECKED
-  $diningChecked = "checked";
-  // Select all columns from the dining table in the database
-  $sql = "select * from dining";
-  $result = $connect->query($sql);
-  // Loop through all rows in the table
-  while ($row = $result->fetch_assoc()){
-    // Save the parking lot number and number of reports as variables
-    $numReports = $row['reports'];
-    $diningID = $row['id'];
-    $diningName = $row['name'];
-    // If the dining location has 20 or more reports
-    if ($numReports >= 20) {
-      $diningIconColor = "red";
-    }
-    // If the dining location has 10 or more (but less than 20) reports
-    else if ($numReports >= 10) {
-      $diningIconColor = "orange";
-    }
-    // If the dining location has less than 10 reports
-    else {
-      $diningIconColor = "lightgreen";
-    }
-    // Print dining icon
-    echo '<button class="icon diningCircle '.$diningName.' '.$numReports.' '.$diningIconColor.'" id="Dining'.$diningID.'" style="background-color:'.$diningIconColor.'"><img src="images/dining_black.png" class="diningIcon"></button>';
-  }
-  }
-  // End dining filter
-  $connect -> close();
-  ?>
-  <!-- End Filter -->
+    <?php
+      session_start();
+      require 'connect.php';
+      $parking = $_POST['parking'];
+      $dining = $_POST['dining'];
+      $recreation = $_POST['recreation'];
+      $vending = $_POST['vending'];
+      $printers = $_POST['printers'];
+      $studyAreas = $_POST['studyAreas'];
+
+      // Begin parking lot filter
+      if ($parking == true) {
+      // Set Parking filter to CHECKED
+      $parkingChecked = "checked";
+      // Select all columns from the parkinglots table in the database
+      $sql = "select * from parkinglots";
+      $result = $connect->query($sql);
+      // Loop through all rows in the table
+      while ($row = $result->fetch_assoc()){
+        // Save the parking lot number and number of reports as variables
+        $numReports = $row['reports'];
+        $lotID = $row['id'];
+        // If the parking lot has 20 or more reports
+        if ($numReports >= 20) {
+          $lotIconColor = "red";
+        }
+        // If the parking lot has 10 or more (but less than 20) reports
+        else if ($numReports >= 10) {
+          $lotIconColor = "orange";
+        }
+        // If the parking lot has less than 10 reports
+        else {
+          $lotIconColor = "lightgreen";
+        }
+        // If the parking lot has overnight parking, set overnightParking to yes
+        if ($row['overnightParking'] == 1) {
+          $overnightParking = "overnight-yes";
+        } else {
+          $overnightParking = "overnight-no";
+        }
+        // Print lot icon with these classes ("circle overnight-yes/no")
+        echo '<button id="P'.$lotID.'" class="icon circle '.$overnightParking.' '.$numReports.' '.$lotIconColor.'" style="background-color:'.$lotIconColor.'">P'.$lotID.'</button>';
+      }
+      }
+      // End parking lot filter
+
+      // Begin dining filter
+      if ($dining == true) {
+      // Set Dining filter to CHECKED
+      $diningChecked = "checked";
+      // Select all columns from the dining table in the database
+      $sql = "select * from dining";
+      $result = $connect->query($sql);
+      // Loop through all rows in the table
+      while ($row = $result->fetch_assoc()){
+        // Save the parking lot number and number of reports as variables
+        $numReports = $row['reports'];
+        $diningID = $row['id'];
+        $diningName = $row['name'];
+        // If the dining location has 20 or more reports
+        if ($numReports >= 20) {
+          $diningIconColor = "red";
+        }
+        // If the dining location has 10 or more (but less than 20) reports
+        else if ($numReports >= 10) {
+          $diningIconColor = "orange";
+        }
+        // If the dining location has less than 10 reports
+        else {
+          $diningIconColor = "lightgreen";
+        }
+        // Print dining icon
+        echo '<button class="icon diningCircle '.$diningName.' '.$numReports.' '.$diningIconColor.'" id="Dining'.$diningID.'" style="background-color:'.$diningIconColor.'"><img src="images/dining_black.png" class="diningIcon"></button>';
+      }
+      }
+      // End dining filter
+
+
+     // Begin Rec Filter
+     if ($recreation == true) {
+     // Set rec filter to CHECKED
+     $recChecked = "checked";
+     // Select all columns from the rec table in the database
+        $sql = "select * from recreation";
+        $result = $connect->query($sql);
+        // Loop through all rows in the table
+        while ($row = $result->fetch_assoc()){
+          // Save the parking lot number and number of reports as variables
+          $numReports = $row['reports'];
+          $recID = $row['id'];
+          $recName = $row['name'];
+          // If the rec location has 20 or more reports
+          if ($numReports >= 20) {
+            $recIconColor = "red";
+          }
+          // If the recreation location has 10 or more (but less than 20) reports
+          else if ($numReports >= 10) {
+            $recIconColor = "orange";
+          }
+          // If the recreation location has less than 10 reports
+          else {
+            $recIconColor = "lightgreen";
+          }
+          // Print rec icon
+          echo '<button class="icon recCircle '.$recName.' '.$numReports.' '.$recIconColor.'" id="recreation'.$recID.'" style="background-color:'.$recIconColor.'"><img src="images/dumbell.png" class="recIcon"></button>';
+        }
+        }
+     // End Rec Fitler
+
+
+
+        // Begin Study Filter
+        if ($studyAreas == true) {
+        // Set study filter to CHECKED
+        $studyChecked = "checked";
+        // Select all columns from the study areas table in the database
+           $sql = "select * from Study Areas";
+           $result = $connect->query($sql);
+           // Loop through all rows in the table
+           while ($row = $result->fetch_assoc()){
+             // Save the parking lot number and number of reports as variables
+             $numReports = $row['reports'];
+             $studyID = $row['id'];
+             $studyName = $row['name'];
+             // If the dining location has 20 or more reports
+             if ($numReports >= 20) {
+               $studyIconColor = "red";
+             }
+             // If the recreation location has 10 or more (but less than 20) reports
+             else if ($numReports >= 10) {
+               $studyIconColor = "orange";
+             }
+             // If the recreation location has less than 10 reports
+             else {
+               $studyIconColor = "lightgreen";
+             }
+             // Print study icon
+             echo '<button class="icon studyCircle '.$studyName.' '.$numReports.' '.$studyIconColor.'" id="studyAreas'.$recID.'" style="background-color:'.$studyIconColor.'"><img src="images/book.png" class="studyIcon"></button>';
+           }
+           }
+        // End Study Fitler
+
+
+     $connect -> close();
+     ?>
+     <!-- End Filter -->
+
 
 
 
