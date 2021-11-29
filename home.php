@@ -109,7 +109,7 @@ while ($row = $result->fetch_assoc()){
     $overnightParking = "overnight-no";
   }
   // Print lot icon with these classes ("circle overnight-yes/no")
-  echo '<button id="P'.$lotID.'" class="circle '.$overnightParking.' '.$numReports.' '.$lotIconColor.'" style="background-color:'.$lotIconColor.'">P'.$lotID.'</button>';
+  echo '<button id="P'.$lotID.'" class="icon circle '.$overnightParking.' '.$numReports.' '.$lotIconColor.'" style="background-color:'.$lotIconColor.'">P'.$lotID.'</button>';
 }
 }
 // End parking lot filter
@@ -124,6 +124,7 @@ while ($row = $result->fetch_assoc()){
   // Save the parking lot number and number of reports as variables
   $numReports = $row['reports'];
   $diningID = $row['id'];
+  $diningName = $row['name'];
   // If the dining location has 20 or more reports
   if ($numReports >= 20) {
     $diningIconColor = "red";
@@ -137,7 +138,7 @@ while ($row = $result->fetch_assoc()){
     $diningIconColor = "lightgreen";
   }
   // Print dining icon
-  echo '<button class="diningCircle" id="Dining'.$diningID.'" style="background-color:'.$diningIconColor.'"><img src="images/dining.png" class="diningIcon"></button>';
+  echo '<button class="icon diningCircle '.$diningName.' '.$numReports.' '.$diningIconColor.'" id="Dining'.$diningID.'" style="background-color:'.$diningIconColor.'"><img src="images/dining.png" class="diningIcon"></button>';
 }
 }
 // End dining filter
@@ -159,7 +160,7 @@ $connect -> close();
     <div class="modal-body" id="modalBody">
       <h3 id="busyLevel">Example: BUSY</h3>
       <h6 id="busyReports">Example: 4 reports in the last hour</h6>
-      <p id="lotOvernight" style="display:inline">Example: No Overnight Parking</p>
+      <p id="lotOvernight" style="display:inline"></p>
       <i id=overnightIcon></i>
     </div>
     <!-- Modal footer -->
