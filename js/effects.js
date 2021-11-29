@@ -11,7 +11,7 @@ var exit = document.getElementsByClassName("btn-close")[0];
 var close = document.getElementsByClassName("btn-secondary")[0];
 
 // When the user clicks on the parking lot button, open the modal
-for (let i = 0; i < 37; i++){
+for (let i = 0; i < btn.length; i++){
   btn[i].onclick = function(){
     // Open the modal
     modal.style.display = "block";
@@ -46,7 +46,6 @@ for (let i = 0; i < 37; i++){
       document.getElementById("lotOvernight").innerHTML = "";
     }
 
-
     // Begin Busy Level
     var numberOfReports = btn[i].classList[3]; // Number of reports on parking lot
     var textColor = btn[i].classList[4]; // Color of parkinglot icon (used for number of reports in modal)
@@ -67,8 +66,6 @@ for (let i = 0; i < 37; i++){
     busyReports.innerHTML = numberOfReports + " reports in the last hour";
     busyReports.style.color = textColor;
     // End Busy Level
-
-
   }
 }
 
