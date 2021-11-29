@@ -218,6 +218,7 @@
   <!-- End Navbar -->
 
 <!-- Begin Modal Popup -->
+<form action="report.php" method="post">
 <div id="myModal" class="modal">
   <div class="modal-content">
     <!-- Modal Header -->
@@ -234,11 +235,12 @@
     </div>
     <!-- Modal footer -->
     <div class="modal-footer">
-      <button type="button" class="btn btn-danger">Report as Busy</button>
+      <button type="submit" class="btn btn-danger">Report as Busy</button>
       <button type="button" class="btn btn-secondary">Close</button>
     </div>
   </div>
 </div>
+</form>
 <!-- End Modal Popup -->
 
   <!-- Map -->
