@@ -341,4 +341,20 @@
   display: flex;
   font-weight: bold;
 }
+
+.recIcon {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+}
+
+#rec1 {
+  margin-left: 48rem;
+  margin-top: 47rem;
+}
+
+#rec2 {
+  margin-left: 46rem;
+  margin-top: 82rem;
+}
 /*# sourceMappingURL=main.css.map */
