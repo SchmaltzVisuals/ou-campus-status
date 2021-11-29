@@ -120,7 +120,7 @@
             $recIconColor = "lightgreen";
           }
           // Print rec icon
-          echo '<button class="icon recCircle '.$recName.' '.$numReports.' '.$recIconColor.'" id="recreation'.$recID.'" style="background-color:'.$recIconColor.'"><img src="images/dumbell.png" class="recIcon"></button>';
+          echo '<button class="icon recCircle '.$recName.' '.$numReports.' '.$recIconColor.'" id="recreation'.$recID.'" style="background-color:'.$recIconColor.'"><img src="images/dumbbell.png" class="recIcon"></button>';
         }
         }
      // End Rec Fitler
