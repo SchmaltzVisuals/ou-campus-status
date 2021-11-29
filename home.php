@@ -87,7 +87,7 @@
       $diningIconColor = "lightgreen";
     }
     // Print dining icon
-    echo '<button class="icon diningCircle '.$diningName.' '.$numReports.' '.$diningIconColor.'" id="Dining'.$diningID.'" style="background-color:'.$diningIconColor.'"><img src="images/dining.png" class="diningIcon"></button>';
+    echo '<button class="icon diningCircle '.$diningName.' '.$numReports.' '.$diningIconColor.'" id="Dining'.$diningID.'" style="background-color:'.$diningIconColor.'"><img src="images/dining_black.png" class="diningIcon"></button>';
   }
   }
   // End dining filter
