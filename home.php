@@ -24,7 +24,8 @@
         $printers = $_POST['printers'];
         $studyAreas = $_POST['studyAreas'];
 
-        // Welcome message
+        /*
+        // Welcome message (NOT WORKING)
         if (!isset($_SESSION['welcome'])) {
           echo '<script type="text/javascript">
           function welcomeMessage() {
@@ -33,6 +34,7 @@
           </script>';
           $_SESSION['welcome'] = "true";
         }
+        */
 
         // Begin parking lot filter
         if ($parking == true) {
