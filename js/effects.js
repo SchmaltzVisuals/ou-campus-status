@@ -59,6 +59,14 @@ for (let i = 0; i < btn.length; i++){
       // Make the modal title the dining name and empty the lotOvernight element, as it does not apply to dining
       document.getElementById("entityName").innerHTML = btn[i].classList[2].replace(/-/g, " ");
       document.getElementById("lotOvernight").innerHTML = "";
+
+    } else if (btn[i].classList.contains("studyCircle") == true) {
+      // If button type is studyAreas, set entityType to study and save entityID
+      document.getElementById("entityType").value = 'study';
+      document.getElementById("entityId").value = btn[i].id.substring(5);
+      // Make the modal title the dining name and empty the lotOvernight element, as it does not apply to dining
+      document.getElementById("entityName").innerHTML = btn[i].classList[2].replace(/-/g, " ");
+      document.getElementById("lotOvernight").innerHTML = "";
     }
 
     // Begin Busy Level
