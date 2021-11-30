@@ -15,7 +15,6 @@
 <body style="background-color: grey;">
 
 
-
       <?php
         session_start();
         require 'connect.php';
@@ -153,7 +152,7 @@
                  $studyIconColor = "lightgreen";
                }
                // Print study icon
-               echo '<button id="study'.$recID.'" class="icon studyCircle '.$studyName.' '.$numReports.' '.$studyIconColor.'" style="background-color:'.$studyIconColor.'"><img src="images/book.png" class="studyIcon"></button>';
+               echo '<button id="study'.$studyID.'" class="icon studyCircle '.$studyName.' '.$numReports.' '.$studyIconColor.'" style="background-color:'.$studyIconColor.'"><img src="images/book.png" class="studyIcon"></button>';
              }
              }
           // End Study Fitler
