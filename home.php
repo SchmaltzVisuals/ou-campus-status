@@ -59,7 +59,7 @@
           // Print lot icon with these classes ("circle overnight-yes/no")
           echo '<button id="P'.$lotID.'" class="icon circle '.$overnightParking.' '.$numReports.' '.$lotIconColor.'" style="background-color:'.$lotIconColor.'">P'.$lotID.'</button>';
         }
-        }
+      }
         // End parking lot filter
 
         // Begin dining filter
@@ -88,7 +88,7 @@
             $diningIconColor = "lightgreen";
           }
           // Print dining icon
-          echo '<button class="icon diningCircle '.$diningName.' '.$numReports.' '.$diningIconColor.'" id="Dining'.$diningID.'" style="background-color:'.$diningIconColor.'"><img src="images/dining_black.png" class="diningIcon"></button>';
+          echo '<button id="Dining'.$diningID.'" class="icon diningCircle '.$diningName.' '.$numReports.' '.$diningIconColor.'"  style="background-color:'.$diningIconColor.'"><img src="images/dining_black.png" class="diningIcon"></button>';
         }
         }
         // End dining filter
@@ -120,7 +120,7 @@
               $recIconColor = "lightgreen";
             }
             // Print rec icon
-            echo '<button class="icon recCircle '.$recName.' '.$numReports.' '.$recIconColor.'" id="recreation'.$recID.'" style="background-color:'.$recIconColor.'"><img src="images/dumbbell.png" class="recIcon"></button>';
+            echo '<button id="rec'.$recID.'" class="icon recCircle '.$recName.' '.$numReports.' '.$recIconColor.'" style="background-color:'.$recIconColor.'"><img src="images/dumbbell.png" class="recIcon"></button>';
           }
           }
           // End Rec Fitler
@@ -153,7 +153,7 @@
                  $studyIconColor = "lightgreen";
                }
                // Print study icon
-               echo '<button class="icon studyCircle '.$studyName.' '.$numReports.' '.$studyIconColor.'" id="studyAreas'.$recID.'" style="background-color:'.$studyIconColor.'"><img src="images/book.png" class="studyIcon"></button>';
+               echo '<button id="study'.$recID.'" class="icon studyCircle '.$studyName.' '.$numReports.' '.$studyIconColor.'" style="background-color:'.$studyIconColor.'"><img src="images/book.png" class="studyIcon"></button>';
              }
              }
           // End Study Fitler
@@ -232,10 +232,13 @@
       <h6 id="busyReports">Example: 4 reports in the last hour</h6>
       <p id="lotOvernight" style="display:inline"></p>
       <i id=overnightIcon></i>
+      <input type="hidden" id="entityType" name="entityType">
+      <input type="hidden" id="entityId" name="entityId">
     </div>
     <!-- Modal footer -->
     <div class="modal-footer">
-      <button type="submit" class="btn btn-danger">Report as Busy</button>
+      <button type="submit" class="btn btn-success" name="reportButton" value="notbusy">Report as Not Busy</button>
+      <button type="submit" class="btn btn-danger" name="reportButton" value="busy">Report as Busy</button>
       <button type="button" class="btn btn-secondary">Close</button>
     </div>
   </div>
