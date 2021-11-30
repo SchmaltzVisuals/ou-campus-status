@@ -43,10 +43,19 @@ for (let i = 0; i < btn.length; i++){
         iconElement.style.color = 'red';
       }
       // End Overnight Parking
+
     } else if (btn[i].classList.contains("diningCircle") == true) {
       // If button type is dining, set entityType to dining and save entityID
       document.getElementById("entityType").value = 'dining';
       document.getElementById("entityId").value = btn[i].id.substring(6);
+      // Make the modal title the dining name and empty the lotOvernight element, as it does not apply to dining
+      document.getElementById("entityName").innerHTML = btn[i].classList[2].replace(/-/g, " ");
+      document.getElementById("lotOvernight").innerHTML = "";
+
+    } else if (btn[i].classList.contains("recCircle") == true) {
+      // If button type is recreation, set entityType to recreation and save entityID
+      document.getElementById("entityType").value = 'recreation';
+      document.getElementById("entityId").value = btn[i].id.substring(3);
       // Make the modal title the dining name and empty the lotOvernight element, as it does not apply to dining
       document.getElementById("entityName").innerHTML = btn[i].classList[2].replace(/-/g, " ");
       document.getElementById("lotOvernight").innerHTML = "";
