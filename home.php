@@ -26,7 +26,9 @@
         $studyAreas = $_POST['studyAreas'];
 
         // Begin parking lot filter
-        if ($parking == true) {
+        if ($parking == true || $_SESSION['parking'] == "true") {
+        // Save filter choice as session variable
+        $_SESSION['parking'] = "true";
         // Set Parking filter to CHECKED
         $parkingChecked = "checked";
         // Select all columns from the parkinglots table in the database
@@ -58,6 +60,8 @@
           // Print lot icon with these classes ("circle overnight-yes/no")
           echo '<button id="P'.$lotID.'" class="icon circle '.$overnightParking.' '.$numReports.' '.$lotIconColor.'" style="background-color:'.$lotIconColor.'">P'.$lotID.'</button>';
         }
+      } else {
+        $_SESSION['parking'] = "false";
       }
         // End parking lot filter
 
