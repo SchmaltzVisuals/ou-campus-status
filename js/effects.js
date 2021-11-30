@@ -92,6 +92,9 @@ for (let i = 0; i < btn.length; i++){
   }
 }
 
+function welcomeMessage() {
+  alert("Welcome to OU Traffic\n\nThis site uses a reporting system to provide accurate traffic data. The number of reports will be reset to 0 every hour.");
+}
 
 // When the user clicks on (x), close the modal
 exit.onclick = function() {
