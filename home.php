@@ -14,7 +14,6 @@
 </head>
 <body style="background-color: grey;">
 
-
       <?php
         session_start();
         require 'connect.php';
@@ -24,6 +23,11 @@
         $vending = $_POST['vending'];
         $printers = $_POST['printers'];
         $studyAreas = $_POST['studyAreas'];
+
+        if (!isset($_SESSION['welcome'])) {
+          echo '<script>welcomeMessage()</script>';
+          $_SESSION['welcome'] = "ran";
+        }
 
         // Begin parking lot filter
         if ($parking == true) {
@@ -37,15 +41,15 @@
           // Save the parking lot number and number of reports as variables
           $numReports = $row['reports'];
           $lotID = $row['id'];
-          // If the parking lot has 20 or more reports
-          if ($numReports >= 20) {
+          // If the parking lot has 5 or more reports
+          if ($numReports >= 5) {
             $lotIconColor = "red";
           }
-          // If the parking lot has 10 or more (but less than 20) reports
-          else if ($numReports >= 10) {
+          // If the parking lot has 1 or more (but less than 20) reports
+          else if ($numReports >= 1) {
             $lotIconColor = "orange";
           }
-          // If the parking lot has less than 10 reports
+          // If the parking lot has less than 1 reports
           else {
             $lotIconColor = "lightgreen";
           }
@@ -74,15 +78,15 @@
           $numReports = $row['reports'];
           $diningID = $row['id'];
           $diningName = $row['name'];
-          // If the dining location has 20 or more reports
-          if ($numReports >= 20) {
+          // If the dining location has 5 or more reports
+          if ($numReports >= 5) {
             $diningIconColor = "red";
           }
-          // If the dining location has 10 or more (but less than 20) reports
-          else if ($numReports >= 10) {
+          // If the dining location has 1 or more (but less than 20) reports
+          else if ($numReports >= 1) {
             $diningIconColor = "orange";
           }
-          // If the dining location has less than 10 reports
+          // If the dining location has less than 1 reports
           else {
             $diningIconColor = "lightgreen";
           }
@@ -106,15 +110,15 @@
             $numReports = $row['reports'];
             $recID = $row['id'];
             $recName = $row['name'];
-            // If the rec location has 20 or more reports
-            if ($numReports >= 20) {
+            // If the rec location has 5 or more reports
+            if ($numReports >= 5) {
               $recIconColor = "red";
             }
-            // If the recreation location has 10 or more (but less than 20) reports
-            else if ($numReports >= 10) {
+            // If the recreation location has 1 or more (but less than 20) reports
+            else if ($numReports >= 1) {
               $recIconColor = "orange";
             }
-            // If the recreation location has less than 10 reports
+            // If the recreation location has less than 1 reports
             else {
               $recIconColor = "lightgreen";
             }
@@ -139,15 +143,15 @@
                $numReports = $row['reports'];
                $studyID = $row['id'];
                $studyName = $row['name'];
-               // If the dining location has 20 or more reports
-               if ($numReports >= 20) {
+               // If the dining location has 5 or more reports
+               if ($numReports >= 5) {
                  $studyIconColor = "red";
                }
-               // If the recreation location has 10 or more (but less than 20) reports
-               else if ($numReports >= 10) {
+               // If the recreation location has 1 or more (but less than 20) reports
+               else if ($numReports >= 1) {
                  $studyIconColor = "orange";
                }
-               // If the recreation location has less than 10 reports
+               // If the recreation location has less than 1 reports
                else {
                  $studyIconColor = "lightgreen";
                }
@@ -208,10 +212,27 @@
         <li class="checkboxNavBar">
          <label class="label" for="timeFilter" > Choose your preferred time &nbsp;</label>
          <br>
-         <?php
-         date_default_timezone_set("America/New_York");
-         echo '<input type="time" value="' . date("h:i") . '">';
-         ?>
+         <select id="timeFilter" name="timeFilter">
+           <option value="7a-8a">7:00AM-8:00AM</option>
+           <option value="8a-9a">8:00AM-9:00AM</option>
+           <option value="9a-10a">9:00AM-10:00AM</option>
+           <option value="10a-11a">10:00AM-11:00AM</option>
+           <option value="11a-12p">11:00AM-12:00PM</option>
+           <option value="12a-1p">12:00PM-1:00PM</option>
+           <option value="1p-2p">1:00PM-2:00PM</option>
+           <option value="2p-3p">2:00PM-3:00PM</option>
+           <option value="3p-4p">3:00PM-4:00PM</option>
+           <option value="4p-5p">4:00PM-5:00PM</option>
+           <option value="5p-6p">5:00PM-6:00PM</option>
+           <option value="6p-7p">6:00PM-7:00PM</option>
+           <option value="7p-8p">7:00PM-8:00PM</option>
+           <option value="8p-9p">8:00PM-9:00PM</option>
+           <option value="9p-10p">9:00PM-10:00PM</option>
+           <option value="10p-11p">10:00PM-11:00PM</option>
+           <option value="11p-12a">11:00pm-12:00AM</option>
+           <option value="12a-1a">12:00AM-1:00AM</option>
+           <option value="1a-2a">1:00AM-2:00AM</option>
+       </select>
        </li>
        <li><br>
          <input type="submit" class="btn btn-primary" name="submit" value="Apply Filter">
