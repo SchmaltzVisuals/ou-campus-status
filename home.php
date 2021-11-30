@@ -24,9 +24,14 @@
         $printers = $_POST['printers'];
         $studyAreas = $_POST['studyAreas'];
 
+        // Welcome message
         if (!isset($_SESSION['welcome'])) {
-          echo '<script>welcomeMessage()</script>';
-          $_SESSION['welcome'] = "ran";
+          echo '<script type="text/javascript">
+          function welcomeMessage() {
+            alert("Welcome to OU Traffic\n\nThis site uses a reporting system to provide accurate traffic data.\nThe number of reports will be reset to 0 every hour.");
+          }
+          </script>';
+          $_SESSION['welcome'] = "true";
         }
 
         // Begin parking lot filter
