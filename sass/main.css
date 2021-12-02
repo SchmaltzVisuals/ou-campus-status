@@ -50,19 +50,6 @@
   font-weight: bold;
 }
 
-.checkboxNavBar{
-  padding-top: 10px;
-}
-
-.label {
-  color: white;
-  }
-
-.checkboxNavBar:checked + .label {
-  color: #b59a57;
-  font-weight: bold;
-}
-
 .studyCircle {
   position: absolute;
   width: 30px;
@@ -84,8 +71,8 @@
 }
 
 #study1 {
-  margin-left: 26rem;
-  margin-top: 49rem;
+  margin-left: 27.5rem;
+  margin-top: 50rem;
 }
 
 #study2 {
@@ -108,6 +95,20 @@
   margin-top: 80rem;
 }
 
+.checkboxNavBar{
+  padding-top: 10px;
+}
+
+.label {
+  color: white;
+  }
+
+.checkboxNavBar:checked + .label {
+  color: #b59a57;
+  font-weight: bold;
+}
+
+
 .circle {
   position: absolute;
   width: 30px;
@@ -120,6 +121,37 @@
   font-size: 15px;
   display: flex;
   font-weight: bold;
+}
+
+-
+.recCircle {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  display: flex;
+  font-weight: bold;
+}
+
+.recIcon {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+}
+
+#rec1 {
+  margin-left: 48rem;
+  margin-top: 47rem;
+}
+
+#rec2 {
+  margin-left: 46rem;
+  margin-top: 82rem;
 }
 
 #P1 {
@@ -327,34 +359,4 @@
   margin-top: 60.3rem;
 }
 
-
-.recCircle {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: white;
-  border-radius: 50%;
-  z-index: 1;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  display: flex;
-  font-weight: bold;
-}
-
-.recIcon {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-}
-
-#rec1 {
-  margin-left: 48rem;
-  margin-top: 47rem;
-}
-
-#rec2 {
-  margin-left: 46rem;
-  margin-top: 82rem;
-}
 /*# sourceMappingURL=main.css.map */
