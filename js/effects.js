@@ -22,7 +22,10 @@ for (let i = 0; i < btn.length; i++){
 
     // Check what type of button was pressed (parking, dining, etc.)
     if (btn[i].classList.contains("circle") == true) {
-      // If button type is parking, make the modal title Parking Lot P#
+      // If button type is parking, set entityType to parking and save entityID
+      document.getElementById("entityType").value = 'parkinglots';
+      document.getElementById("entityId").value = btn[i].id.substring(1);
+      // Make the modal title Parking Lot P#
       document.getElementById("entityName").innerHTML = "Parking Lot " + document.getElementsByClassName("circle")[i].id;
       // Begin Overnight Parking
       // Check if the button has the "overnight-yes" class
@@ -40,8 +43,28 @@ for (let i = 0; i < btn.length; i++){
         iconElement.style.color = 'red';
       }
       // End Overnight Parking
+
     } else if (btn[i].classList.contains("diningCircle") == true) {
-      // If button type is dining, make the modal title the dining name
+      // If button type is dining, set entityType to dining and save entityID
+      document.getElementById("entityType").value = 'dining';
+      document.getElementById("entityId").value = btn[i].id.substring(6);
+      // Make the modal title the dining name and empty the lotOvernight element, as it does not apply to dining
+      document.getElementById("entityName").innerHTML = btn[i].classList[2].replace(/-/g, " ");
+      document.getElementById("lotOvernight").innerHTML = "";
+
+    } else if (btn[i].classList.contains("recCircle") == true) {
+      // If button type is recreation, set entityType to recreation and save entityID
+      document.getElementById("entityType").value = 'recreation';
+      document.getElementById("entityId").value = btn[i].id.substring(3);
+      // Make the modal title the dining name and empty the lotOvernight element, as it does not apply to dining
+      document.getElementById("entityName").innerHTML = btn[i].classList[2].replace(/-/g, " ");
+      document.getElementById("lotOvernight").innerHTML = "";
+
+    } else if (btn[i].classList.contains("studyCircle") == true) {
+      // If button type is studyAreas, set entityType to study and save entityID
+      document.getElementById("entityType").value = 'study';
+      document.getElementById("entityId").value = btn[i].id.substring(5);
+      // Make the modal title the dining name and empty the lotOvernight element, as it does not apply to dining
       document.getElementById("entityName").innerHTML = btn[i].classList[2].replace(/-/g, " ");
       document.getElementById("lotOvernight").innerHTML = "";
     }
@@ -68,7 +91,6 @@ for (let i = 0; i < btn.length; i++){
     // End Busy Level
   }
 }
-
 
 // When the user clicks on (x), close the modal
 exit.onclick = function() {

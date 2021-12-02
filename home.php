@@ -14,87 +14,164 @@
 </head>
 <body style="background-color: grey;">
 
-  <!-- Begin Filter -->
-  <?php
-  session_start();
-  require 'connect.php';
-  $parking = $_POST['parking'];
-  $dining = $_POST['dining'];
-  $recreation = $_POST['recreation'];
-  $vending = $_POST['vending'];
-  $printers = $_POST['printers'];
-  $studyAreas = $_POST['studyAreas'];
+      <?php
+        session_start();
+        require 'connect.php';
+        $parking = $_POST['parking'];
+        $dining = $_POST['dining'];
+        $recreation = $_POST['recreation'];
+        $vending = $_POST['vending'];
+        $printers = $_POST['printers'];
+        $studyAreas = $_POST['studyAreas'];
 
-  // Begin parking lot filter
-  if ($parking == true) {
-  // Set Parking filter to CHECKED
-  $parkingChecked = "checked";
-  // Select all columns from the parkinglots table in the database
-  $sql = "select * from parkinglots";
-  $result = $connect->query($sql);
-  // Loop through all rows in the table
-  while ($row = $result->fetch_assoc()){
-    // Save the parking lot number and number of reports as variables
-    $numReports = $row['reports'];
-    $lotID = $row['id'];
-    // If the parking lot has 20 or more reports
-    if ($numReports >= 20) {
-      $lotIconColor = "red";
-    }
-    // If the parking lot has 10 or more (but less than 20) reports
-    else if ($numReports >= 10) {
-      $lotIconColor = "orange";
-    }
-    // If the parking lot has less than 10 reports
-    else {
-      $lotIconColor = "lightgreen";
-    }
-    // If the parking lot has overnight parking, set overnightParking to yes
-    if ($row['overnightParking'] == 1) {
-      $overnightParking = "overnight-yes";
-    } else {
-      $overnightParking = "overnight-no";
-    }
-    // Print lot icon with these classes ("circle overnight-yes/no")
-    echo '<button id="P'.$lotID.'" class="icon circle '.$overnightParking.' '.$numReports.' '.$lotIconColor.'" style="background-color:'.$lotIconColor.'">P'.$lotID.'</button>';
-  }
-  }
-  // End parking lot filter
+        /*
+        // Welcome message (NOT WORKING)
+        if (!isset($_SESSION['welcome'])) {
+          echo '<script type="text/javascript">
+          function welcomeMessage() {
+            alert("Welcome to OU Traffic\n\nThis site uses a reporting system to provide accurate traffic data.\nThe number of reports will be reset to 0 every hour.");
+          }
+          </script>';
+          $_SESSION['welcome'] = "true";
+        }
+        */
 
-  // Begin dining filter
-  if ($dining == true) {
-  // Set Dining filter to CHECKED
-  $diningChecked = "checked";
-  // Select all columns from the dining table in the database
-  $sql = "select * from dining";
-  $result = $connect->query($sql);
-  // Loop through all rows in the table
-  while ($row = $result->fetch_assoc()){
-    // Save the parking lot number and number of reports as variables
-    $numReports = $row['reports'];
-    $diningID = $row['id'];
-    $diningName = $row['name'];
-    // If the dining location has 20 or more reports
-    if ($numReports >= 20) {
-      $diningIconColor = "red";
-    }
-    // If the dining location has 10 or more (but less than 20) reports
-    else if ($numReports >= 10) {
-      $diningIconColor = "orange";
-    }
-    // If the dining location has less than 10 reports
-    else {
-      $diningIconColor = "lightgreen";
-    }
-    // Print dining icon
-    echo '<button class="icon diningCircle '.$diningName.' '.$numReports.' '.$diningIconColor.'" id="Dining'.$diningID.'" style="background-color:'.$diningIconColor.'"><img src="images/dining.png" class="diningIcon"></button>';
-  }
-  }
-  // End dining filter
-  $connect -> close();
-  ?>
-  <!-- End Filter -->
+        // Begin parking lot filter
+        if ($parking == true) {
+        // Set Parking filter to CHECKED
+        $parkingChecked = "checked";
+        // Select all columns from the parkinglots table in the database
+        $sql = "select * from parkinglots";
+        $result = $connect->query($sql);
+        // Loop through all rows in the table
+        while ($row = $result->fetch_assoc()){
+          // Save the parking lot number and number of reports as variables
+          $numReports = $row['reports'];
+          $lotID = $row['id'];
+          // If the parking lot has 5 or more reports
+          if ($numReports >= 5) {
+            $lotIconColor = "red";
+          }
+          // If the parking lot has 1 or more (but less than 20) reports
+          else if ($numReports >= 1) {
+            $lotIconColor = "orange";
+          }
+          // If the parking lot has less than 1 reports
+          else {
+            $lotIconColor = "lightgreen";
+          }
+          // If the parking lot has overnight parking, set overnightParking to yes
+          if ($row['overnightParking'] == 1) {
+            $overnightParking = "overnight-yes";
+          } else {
+            $overnightParking = "overnight-no";
+          }
+          // Print lot icon with these classes ("circle overnight-yes/no")
+          echo '<button id="P'.$lotID.'" class="icon circle '.$overnightParking.' '.$numReports.' '.$lotIconColor.'" style="background-color:'.$lotIconColor.'">P'.$lotID.'</button>';
+        }
+      }
+        // End parking lot filter
 
+        // Begin dining filter
+        if ($dining == true) {
+        // Set Dining filter to CHECKED
+        $diningChecked = "checked";
+        // Select all columns from the dining table in the database
+        $sql = "select * from dining";
+        $result = $connect->query($sql);
+        // Loop through all rows in the table
+        while ($row = $result->fetch_assoc()){
+          // Save the parking lot number and number of reports as variables
+          $numReports = $row['reports'];
+          $diningID = $row['id'];
+          $diningName = $row['name'];
+          // If the dining location has 5 or more reports
+          if ($numReports >= 5) {
+            $diningIconColor = "red";
+          }
+          // If the dining location has 1 or more (but less than 20) reports
+          else if ($numReports >= 1) {
+            $diningIconColor = "orange";
+          }
+          // If the dining location has less than 1 reports
+          else {
+            $diningIconColor = "lightgreen";
+          }
+          // Print dining icon
+          echo '<button id="Dining'.$diningID.'" class="icon diningCircle '.$diningName.' '.$numReports.' '.$diningIconColor.'"  style="background-color:'.$diningIconColor.'"><img src="images/dining_black.png" class="diningIcon"></button>';
+        }
+        }
+        // End dining filter
+
+
+       // Begin Rec Filter
+       if ($recreation == true) {
+       // Set rec filter to CHECKED
+       $recChecked = "checked";
+       // Select all columns from the recreation table in the database
+          $sql = "select * from recreation";
+          $result = $connect->query($sql);
+          // Loop through all rows in the table
+          while ($row = $result->fetch_assoc()){
+            // Save the recreation area and number of reports as variables
+            $numReports = $row['reports'];
+            $recID = $row['id'];
+            $recName = $row['name'];
+            // If the rec location has 5 or more reports
+            if ($numReports >= 5) {
+              $recIconColor = "red";
+            }
+            // If the recreation location has 1 or more (but less than 20) reports
+            else if ($numReports >= 1) {
+              $recIconColor = "orange";
+            }
+            // If the recreation location has less than 1 reports
+            else {
+              $recIconColor = "lightgreen";
+            }
+            // Print rec icon
+            echo '<button id="rec'.$recID.'" class="icon recCircle '.$recName.' '.$numReports.' '.$recIconColor.'" style="background-color:'.$recIconColor.'"><img src="images/dumbbell.png" class="recIcon"></button>';
+          }
+          }
+          // End Rec Fitler
+
+
+
+          // Begin Study Filter
+          if ($studyAreas == true) {
+          // Set study filter to CHECKED
+          $studyChecked = "checked";
+          // Select all columns from the study areas table in the database
+             $sql = "select * from study";
+             $result = $connect->query($sql);
+             // Loop through all rows in the table
+             while ($row = $result->fetch_assoc()){
+               // Save the parking lot number and number of reports as variables
+               $numReports = $row['reports'];
+               $studyID = $row['id'];
+               $studyName = $row['name'];
+               // If the dining location has 5 or more reports
+               if ($numReports >= 5) {
+                 $studyIconColor = "red";
+               }
+               // If the recreation location has 1 or more (but less than 20) reports
+               else if ($numReports >= 1) {
+                 $studyIconColor = "orange";
+               }
+               // If the recreation location has less than 1 reports
+               else {
+                 $studyIconColor = "lightgreen";
+               }
+               // Print study icon
+               echo '<button id="study'.$studyID.'" class="icon studyCircle '.$studyName.' '.$numReports.' '.$studyIconColor.'" style="background-color:'.$studyIconColor.'"><img src="images/book.png" class="studyIcon"></button>';
+             }
+             }
+          // End Study Fitler
+
+
+       $connect -> close();
+       ?>
+       <!-- End Filter -->
 
 
   <!-- Begin Navbar -->
@@ -121,7 +198,7 @@
         </li>
         <!-- Recreation Button -->
         <li class="checkboxNavBar">
-          <input type="checkbox" class="checkboxNavBar" name="recreation" id="recreationCB" value="true" <?=$recreationChecked?>>
+          <input type="checkbox" class="checkboxNavBar" name="recreation" id="recreationCB" value="true" <?=$recChecked?>>
           <label class="label" for="recreationCB" > Recreation &nbsp;</label>
         </li>
         <!-- Vending Button -->
@@ -139,10 +216,34 @@
           <input type="checkbox" class="checkboxNavBar" name="studyAreas" id="studyAreasCB" value="true" <?=$studyChecked?>>
           <label class="label" for="studyAreasCB" > Study Areas &nbsp;</label>
         </li>
-        <br>
-        <li>
-          <input type="submit" class="btn btn-primary" name="submit" value="Apply Filter">
-        </li>
+        <li class="checkboxNavBar">
+         <label class="label" for="timeFilter" > Choose your preferred time &nbsp;</label>
+         <br>
+         <select id="timeFilter" name="timeFilter">
+           <option value="7a-8a">7:00AM-8:00AM</option>
+           <option value="8a-9a">8:00AM-9:00AM</option>
+           <option value="9a-10a">9:00AM-10:00AM</option>
+           <option value="10a-11a">10:00AM-11:00AM</option>
+           <option value="11a-12p">11:00AM-12:00PM</option>
+           <option value="12a-1p">12:00PM-1:00PM</option>
+           <option value="1p-2p">1:00PM-2:00PM</option>
+           <option value="2p-3p">2:00PM-3:00PM</option>
+           <option value="3p-4p">3:00PM-4:00PM</option>
+           <option value="4p-5p">4:00PM-5:00PM</option>
+           <option value="5p-6p">5:00PM-6:00PM</option>
+           <option value="6p-7p">6:00PM-7:00PM</option>
+           <option value="7p-8p">7:00PM-8:00PM</option>
+           <option value="8p-9p">8:00PM-9:00PM</option>
+           <option value="9p-10p">9:00PM-10:00PM</option>
+           <option value="10p-11p">10:00PM-11:00PM</option>
+           <option value="11p-12a">11:00pm-12:00AM</option>
+           <option value="12a-1a">12:00AM-1:00AM</option>
+           <option value="1a-2a">1:00AM-2:00AM</option>
+       </select>
+       </li>
+       <li><br>
+         <input type="submit" class="btn btn-primary" name="submit" value="Apply Filter">
+       </li>
       </ul>
     </div>
   </div>
@@ -151,6 +252,7 @@
   <!-- End Navbar -->
 
 <!-- Begin Modal Popup -->
+<form action="report.php" method="post">
 <div id="myModal" class="modal">
   <div class="modal-content">
     <!-- Modal Header -->
@@ -164,14 +266,18 @@
       <h6 id="busyReports">Example: 4 reports in the last hour</h6>
       <p id="lotOvernight" style="display:inline"></p>
       <i id=overnightIcon></i>
+      <input type="hidden" id="entityType" name="entityType">
+      <input type="hidden" id="entityId" name="entityId">
     </div>
     <!-- Modal footer -->
     <div class="modal-footer">
-      <button type="button" class="btn btn-danger">Report as Busy</button>
+      <button type="submit" class="btn btn-success" name="reportButton" value="notbusy">Report as Not Busy</button>
+      <button type="submit" class="btn btn-danger" name="reportButton" value="busy">Report as Busy</button>
       <button type="button" class="btn btn-secondary">Close</button>
     </div>
   </div>
 </div>
+</form>
 <!-- End Modal Popup -->
 
   <!-- Map -->
