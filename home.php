@@ -201,21 +201,24 @@
           <input type="checkbox" class="checkboxNavBar" name="recreation" id="recreationCB" value="true" <?=$recChecked?>>
           <label class="label" for="recreationCB" > Recreation &nbsp;</label>
         </li>
-        <!-- Vending Button -->
+        <!-- Vending Button
         <li class="checkboxNavBar">
           <input type="checkbox" class="checkboxNavBar" name="vending" id="vendingCB" value="true" <?=$vendingChecked?>>
           <label class="label" for="vendingCB" > Vending &nbsp;</label>
         </li>
-        <!-- Printers Button -->
+      -->
+        <!-- Printers Button
         <li class="checkboxNavBar">
           <input type="checkbox" class="checkboxNavBar" name="printers" id="printersCB" value="true" <?=$printersChecked?>>
           <label class="label" for="printersCB" > Printers &nbsp;</label>
         </li>
+      -->
         <!-- Study Areas Button -->
         <li class="checkboxNavBar">
           <input type="checkbox" class="checkboxNavBar" name="studyAreas" id="studyAreasCB" value="true" <?=$studyChecked?>>
           <label class="label" for="studyAreasCB" > Study Areas &nbsp;</label>
         </li>
+<!--
         <li class="checkboxNavBar">
          <label class="label" for="timeFilter" > Choose your preferred time &nbsp;</label>
          <br>
@@ -241,6 +244,7 @@
            <option value="1a-2a">1:00AM-2:00AM</option>
        </select>
        </li>
+     -->
        <li><br>
          <input type="submit" class="btn btn-primary" name="submit" value="Apply Filter">
        </li>
@@ -280,9 +284,10 @@
 </form>
 <!-- End Modal Popup -->
 
-  <!-- Map -->
-  <img src="images/ou-map-100-done.png" id="map">
-  <!-- End Map -->
+<!-- Map -->
+<img src="images/ou-map-100-done.png" id="map">
+
+<!-- End Map -->
 
 
   <!-- Bootstrap JavaScript -->
